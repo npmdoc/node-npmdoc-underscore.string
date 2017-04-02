@@ -1,0 +1,2323 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://epeli.github.com/underscore.string/">underscore.string (v3.3.4)</a>
+</h1>
+<h4>String manipulation extensions for Underscore.js javascript library.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.underscore.string">module underscore.string</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.camelcase">
+            function <span class="apidocSignatureSpan">underscore.string.</span>camelcase
+            <span class="apidocSignatureSpan">(str, decapitalize)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.camelize">
+            function <span class="apidocSignatureSpan">underscore.string.</span>camelize
+            <span class="apidocSignatureSpan">(str, decapitalize)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.capitalize">
+            function <span class="apidocSignatureSpan">underscore.string.</span>capitalize
+            <span class="apidocSignatureSpan">(str, lowercaseRest)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.center">
+            function <span class="apidocSignatureSpan">underscore.string.</span>center
+            <span class="apidocSignatureSpan">(str, length, padStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.chars">
+            function <span class="apidocSignatureSpan">underscore.string.</span>chars
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.chop">
+            function <span class="apidocSignatureSpan">underscore.string.</span>chop
+            <span class="apidocSignatureSpan">(str, step)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.classify">
+            function <span class="apidocSignatureSpan">underscore.string.</span>classify
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.clean">
+            function <span class="apidocSignatureSpan">underscore.string.</span>clean
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.cleanDiacritics">
+            function <span class="apidocSignatureSpan">underscore.string.</span>cleanDiacritics
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.contains">
+            function <span class="apidocSignatureSpan">underscore.string.</span>contains
+            <span class="apidocSignatureSpan">(str, needle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.count">
+            function <span class="apidocSignatureSpan">underscore.string.</span>count
+            <span class="apidocSignatureSpan">(str, substr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.dasherize">
+            function <span class="apidocSignatureSpan">underscore.string.</span>dasherize
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.decapitalize">
+            function <span class="apidocSignatureSpan">underscore.string.</span>decapitalize
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.dedent">
+            function <span class="apidocSignatureSpan">underscore.string.</span>dedent
+            <span class="apidocSignatureSpan">(str, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.endsWith">
+            function <span class="apidocSignatureSpan">underscore.string.</span>endsWith
+            <span class="apidocSignatureSpan">(str, ends, position)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.escapeHTML">
+            function <span class="apidocSignatureSpan">underscore.string.</span>escapeHTML
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.escapeRegExp">
+            function <span class="apidocSignatureSpan">underscore.string.</span>escapeRegExp
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.exports">
+            function <span class="apidocSignatureSpan">underscore.string.</span>exports
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.humanize">
+            function <span class="apidocSignatureSpan">underscore.string.</span>humanize
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.include">
+            function <span class="apidocSignatureSpan">underscore.string.</span>include
+            <span class="apidocSignatureSpan">(str, needle)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.insert">
+            function <span class="apidocSignatureSpan">underscore.string.</span>insert
+            <span class="apidocSignatureSpan">(str, i, substr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.isBlank">
+            function <span class="apidocSignatureSpan">underscore.string.</span>isBlank
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.join">
+            function <span class="apidocSignatureSpan">underscore.string.</span>join
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.levenshtein">
+            function <span class="apidocSignatureSpan">underscore.string.</span>levenshtein
+            <span class="apidocSignatureSpan">(str1, str2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.lines">
+            function <span class="apidocSignatureSpan">underscore.string.</span>lines
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.ljust">
+            function <span class="apidocSignatureSpan">underscore.string.</span>ljust
+            <span class="apidocSignatureSpan">(str, length, padStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.lpad">
+            function <span class="apidocSignatureSpan">underscore.string.</span>lpad
+            <span class="apidocSignatureSpan">(str, length, padStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.lrpad">
+            function <span class="apidocSignatureSpan">underscore.string.</span>lrpad
+            <span class="apidocSignatureSpan">(str, length, padStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.lstrip">
+            function <span class="apidocSignatureSpan">underscore.string.</span>lstrip
+            <span class="apidocSignatureSpan">(str, characters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.ltrim">
+            function <span class="apidocSignatureSpan">underscore.string.</span>ltrim
+            <span class="apidocSignatureSpan">(str, characters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.map">
+            function <span class="apidocSignatureSpan">underscore.string.</span>map
+            <span class="apidocSignatureSpan">(str, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.mapChars">
+            function <span class="apidocSignatureSpan">underscore.string.</span>mapChars
+            <span class="apidocSignatureSpan">(str, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.naturalCmp">
+            function <span class="apidocSignatureSpan">underscore.string.</span>naturalCmp
+            <span class="apidocSignatureSpan">(str1, str2)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.numberFormat">
+            function <span class="apidocSignatureSpan">underscore.string.</span>numberFormat
+            <span class="apidocSignatureSpan">(number, dec, dsep, tsep)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.pad">
+            function <span class="apidocSignatureSpan">underscore.string.</span>pad
+            <span class="apidocSignatureSpan">(str, length, padStr, type)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.pred">
+            function <span class="apidocSignatureSpan">underscore.string.</span>pred
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.prune">
+            function <span class="apidocSignatureSpan">underscore.string.</span>prune
+            <span class="apidocSignatureSpan">(str, length, pruneStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.q">
+            function <span class="apidocSignatureSpan">underscore.string.</span>q
+            <span class="apidocSignatureSpan">(str, quoteChar)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.quote">
+            function <span class="apidocSignatureSpan">underscore.string.</span>quote
+            <span class="apidocSignatureSpan">(str, quoteChar)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.repeat">
+            function <span class="apidocSignatureSpan">underscore.string.</span>repeat
+            <span class="apidocSignatureSpan">(str, qty, separator)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.replaceAll">
+            function <span class="apidocSignatureSpan">underscore.string.</span>replaceAll
+            <span class="apidocSignatureSpan">(str, find, replace, ignorecase)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.reverse">
+            function <span class="apidocSignatureSpan">underscore.string.</span>reverse
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.rjust">
+            function <span class="apidocSignatureSpan">underscore.string.</span>rjust
+            <span class="apidocSignatureSpan">(str, length, padStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.rpad">
+            function <span class="apidocSignatureSpan">underscore.string.</span>rpad
+            <span class="apidocSignatureSpan">(str, length, padStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.rstrip">
+            function <span class="apidocSignatureSpan">underscore.string.</span>rstrip
+            <span class="apidocSignatureSpan">(str, characters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.rtrim">
+            function <span class="apidocSignatureSpan">underscore.string.</span>rtrim
+            <span class="apidocSignatureSpan">(str, characters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.slugify">
+            function <span class="apidocSignatureSpan">underscore.string.</span>slugify
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.splice">
+            function <span class="apidocSignatureSpan">underscore.string.</span>splice
+            <span class="apidocSignatureSpan">(str, i, howmany, substr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.sprintf">
+            function <span class="apidocSignatureSpan">underscore.string.</span>sprintf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.startsWith">
+            function <span class="apidocSignatureSpan">underscore.string.</span>startsWith
+            <span class="apidocSignatureSpan">(str, starts, position)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.strLeft">
+            function <span class="apidocSignatureSpan">underscore.string.</span>strLeft
+            <span class="apidocSignatureSpan">(str, sep)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.strLeftBack">
+            function <span class="apidocSignatureSpan">underscore.string.</span>strLeftBack
+            <span class="apidocSignatureSpan">(str, sep)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.strRight">
+            function <span class="apidocSignatureSpan">underscore.string.</span>strRight
+            <span class="apidocSignatureSpan">(str, sep)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.strRightBack">
+            function <span class="apidocSignatureSpan">underscore.string.</span>strRightBack
+            <span class="apidocSignatureSpan">(str, sep)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.strip">
+            function <span class="apidocSignatureSpan">underscore.string.</span>strip
+            <span class="apidocSignatureSpan">(str, characters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.stripTags">
+            function <span class="apidocSignatureSpan">underscore.string.</span>stripTags
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.succ">
+            function <span class="apidocSignatureSpan">underscore.string.</span>succ
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.surround">
+            function <span class="apidocSignatureSpan">underscore.string.</span>surround
+            <span class="apidocSignatureSpan">(str, wrapper)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.swapCase">
+            function <span class="apidocSignatureSpan">underscore.string.</span>swapCase
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.titleize">
+            function <span class="apidocSignatureSpan">underscore.string.</span>titleize
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.toBool">
+            function <span class="apidocSignatureSpan">underscore.string.</span>toBool
+            <span class="apidocSignatureSpan">(str, trueValues, falseValues)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.toBoolean">
+            function <span class="apidocSignatureSpan">underscore.string.</span>toBoolean
+            <span class="apidocSignatureSpan">(str, trueValues, falseValues)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.toNumber">
+            function <span class="apidocSignatureSpan">underscore.string.</span>toNumber
+            <span class="apidocSignatureSpan">(num, precision)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.toSentence">
+            function <span class="apidocSignatureSpan">underscore.string.</span>toSentence
+            <span class="apidocSignatureSpan">(array, separator, lastSeparator, serial)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.toSentenceSerial">
+            function <span class="apidocSignatureSpan">underscore.string.</span>toSentenceSerial
+            <span class="apidocSignatureSpan">(array, sep, lastSep)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.trim">
+            function <span class="apidocSignatureSpan">underscore.string.</span>trim
+            <span class="apidocSignatureSpan">(str, characters)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.truncate">
+            function <span class="apidocSignatureSpan">underscore.string.</span>truncate
+            <span class="apidocSignatureSpan">(str, length, truncateStr)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.underscored">
+            function <span class="apidocSignatureSpan">underscore.string.</span>underscored
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.unescapeHTML">
+            function <span class="apidocSignatureSpan">underscore.string.</span>unescapeHTML
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.unquote">
+            function <span class="apidocSignatureSpan">underscore.string.</span>unquote
+            <span class="apidocSignatureSpan">(str, quoteChar)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.vsprintf">
+            function <span class="apidocSignatureSpan">underscore.string.</span>vsprintf
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.words">
+            function <span class="apidocSignatureSpan">underscore.string.</span>words
+            <span class="apidocSignatureSpan">(str, delimiter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.wrap">
+            function <span class="apidocSignatureSpan">underscore.string.</span>wrap
+            <span class="apidocSignatureSpan">(str, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">underscore.string.</span>VERSION</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.underscore.string" id="apidoc.module.underscore.string">module underscore.string</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.camelcase" id="apidoc.element.underscore.string.camelcase">
+        function <span class="apidocSignatureSpan">underscore.string.</span>camelcase
+        <span class="apidocSignatureSpan">(str, decapitalize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function camelize(str, decapitalize) {
+  str = trim(str).replace(/[-_\s]+(.)?/g, function(match, c) {
+    return c ? c.toUpperCase() : '';
+  });
+
+  if (decapitalize === true) {
+    return decap(str);
+  } else {
+    return str;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.camelize" id="apidoc.element.underscore.string.camelize">
+        function <span class="apidocSignatureSpan">underscore.string.</span>camelize
+        <span class="apidocSignatureSpan">(str, decapitalize)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function camelize(str, decapitalize) {
+  str = trim(str).replace(/[-_\s]+(.)?/g, function(match, c) {
+    return c ? c.toUpperCase() : '';
+  });
+
+  if (decapitalize === true) {
+    return decap(str);
+  } else {
+    return str;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.capitalize" id="apidoc.element.underscore.string.capitalize">
+        function <span class="apidocSignatureSpan">underscore.string.</span>capitalize
+        <span class="apidocSignatureSpan">(str, lowercaseRest)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function capitalize(str, lowercaseRest) {
+  str = makeString(str);
+  var remainingChars = !lowercaseRest ? str.slice(1) : str.slice(1).toLowerCase();
+
+  return str.charAt(0).toUpperCase() + remainingChars;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+or load the full library to enable chaining
+
+```javascript
+var s = require("underscore.string");
+
+s("   epeli  ").trim().<span class="apidocCodeKeywordSpan">capitalize</span>().value();
+// =&gt; "Epeli"
+```
+
+but especially when using with [Browserify][] the individual function approach
+is recommended because using it you only add those functions to your bundle you
+use.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.center" id="apidoc.element.underscore.string.center">
+        function <span class="apidocSignatureSpan">underscore.string.</span>center
+        <span class="apidocSignatureSpan">(str, length, padStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lrpad(str, length, padStr) {
+  return pad(str, length, padStr, 'both');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.chars" id="apidoc.element.underscore.string.chars">
+        function <span class="apidocSignatureSpan">underscore.string.</span>chars
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chars(str) {
+  return makeString(str).split('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.chop" id="apidoc.element.underscore.string.chop">
+        function <span class="apidocSignatureSpan">underscore.string.</span>chop
+        <span class="apidocSignatureSpan">(str, step)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function chop(str, step) {
+  if (str == null) return [];
+  str = String(str);
+  step = ~~step;
+  return step &gt; 0 ? str.match(new RegExp('.{1,' + step + '}', 'g')) : [str];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.classify" id="apidoc.element.underscore.string.classify">
+        function <span class="apidocSignatureSpan">underscore.string.</span>classify
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function classify(str) {
+  str = makeString(str);
+  return capitalize(camelize(str.replace(/[\W_]/g, ' ')).replace(/\s/g, ''));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.clean" id="apidoc.element.underscore.string.clean">
+        function <span class="apidocSignatureSpan">underscore.string.</span>clean
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function clean(str) {
+  return trim(str).replace(/\s\s+/g, ' ');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.cleanDiacritics" id="apidoc.element.underscore.string.cleanDiacritics">
+        function <span class="apidocSignatureSpan">underscore.string.</span>cleanDiacritics
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function cleanDiacritics(str) {
+  return makeString(str).replace(/.{1}/g, function(c){
+    var index = from.indexOf(c);
+    return index === -1 ? c : to[index];
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.contains" id="apidoc.element.underscore.string.contains">
+        function <span class="apidocSignatureSpan">underscore.string.</span>contains
+        <span class="apidocSignatureSpan">(str, needle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function include(str, needle) {
+  if (needle === '') return true;
+  return makeString(str).indexOf(needle) !== -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.count" id="apidoc.element.underscore.string.count">
+        function <span class="apidocSignatureSpan">underscore.string.</span>count
+        <span class="apidocSignatureSpan">(str, substr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">count = function (str, substr) {
+  str = makeString(str);
+  substr = makeString(substr);
+
+  if (str.length === 0 || substr.length === 0) return 0;
+
+  return str.split(substr).length - 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.dasherize" id="apidoc.element.underscore.string.dasherize">
+        function <span class="apidocSignatureSpan">underscore.string.</span>dasherize
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dasherize(str) {
+  return trim(str).replace(/([A-Z])/g, '-$1').replace(/[-_\s]+/g, '-').toLowerCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.decapitalize" id="apidoc.element.underscore.string.decapitalize">
+        function <span class="apidocSignatureSpan">underscore.string.</span>decapitalize
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function decapitalize(str) {
+  str = makeString(str);
+  return str.charAt(0).toLowerCase() + str.slice(1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.dedent" id="apidoc.element.underscore.string.dedent">
+        function <span class="apidocSignatureSpan">underscore.string.</span>dedent
+        <span class="apidocSignatureSpan">(str, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function dedent(str, pattern) {
+  str = makeString(str);
+  var indent = getIndent(str);
+  var reg;
+
+  if (indent === 0) return str;
+
+  if (typeof pattern === 'string') {
+    reg = new RegExp('^' + pattern, 'gm');
+  } else {
+    reg = new RegExp('^[ \\t]{' + indent + '}', 'gm');
+  }
+
+  return str.replace(reg, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.endsWith" id="apidoc.element.underscore.string.endsWith">
+        function <span class="apidocSignatureSpan">underscore.string.</span>endsWith
+        <span class="apidocSignatureSpan">(str, ends, position)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function endsWith(str, ends, position) {
+  str = makeString(str);
+  ends = '' + ends;
+  if (typeof position == 'undefined') {
+    position = str.length - ends.length;
+  } else {
+    position = Math.min(toPositive(position), str.length) - ends.length;
+  }
+  return position &gt;= 0 &amp;&amp; str.indexOf(ends, position) === position;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.escapeHTML" id="apidoc.element.underscore.string.escapeHTML">
+        function <span class="apidocSignatureSpan">underscore.string.</span>escapeHTML
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function escapeHTML(str) {
+
+  return makeString(str).replace(regex, function(m) {
+    return '&amp;' + escapeChars[m] + ';';
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.escapeRegExp" id="apidoc.element.underscore.string.escapeRegExp">
+        function <span class="apidocSignatureSpan">underscore.string.</span>escapeRegExp
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function escapeRegExp(str) {
+  return makeString(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.exports" id="apidoc.element.underscore.string.exports">
+        function <span class="apidocSignatureSpan">underscore.string.</span>exports
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">exports = function () {
+  var result = {};
+
+  for (var prop in this) {
+    if (!this.hasOwnProperty(prop) || prop.match(/^(?:include|contains|reverse|join|map|wrap)$/)) continue;
+    result[prop] = this[prop];
+  }
+
+  return result;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+[RequireJS]: http://requirejs.org/
+
+### Underscore.js/Lo-Dash integration
+
+It is still possible use as Underscore.js/Lo-Dash extension
+
+```javascript
+_.mixin(s.<span class="apidocCodeKeywordSpan">exports</span>());
+```
+But it's not recommended since `include`, `contains`, `reverse` and `join`
+are dropped because they collide with the functions already defined by Underscore.js.
+
+### Lo-Dash-FP/Ramda integration
+
+If you want to use underscore.string with [ramdajs](http://ramdajs.com/) or [Lo-Dash-FP](https://github.com/lodash/lodash-fp) you
+ can use [underscore.string.fp](https://github.com/stoeffel/underscore.string.fp).
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.humanize" id="apidoc.element.underscore.string.humanize">
+        function <span class="apidocSignatureSpan">underscore.string.</span>humanize
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function humanize(str) {
+  return capitalize(trim(underscored(str).replace(/_id$/, '').replace(/_/g, ' ')));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.include" id="apidoc.element.underscore.string.include">
+        function <span class="apidocSignatureSpan">underscore.string.</span>include
+        <span class="apidocSignatureSpan">(str, needle)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function include(str, needle) {
+  if (needle === '') return true;
+  return makeString(str).indexOf(needle) !== -1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.insert" id="apidoc.element.underscore.string.insert">
+        function <span class="apidocSignatureSpan">underscore.string.</span>insert
+        <span class="apidocSignatureSpan">(str, i, substr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function insert(str, i, substr) {
+  return splice(str, i, 0, substr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.isBlank" id="apidoc.element.underscore.string.isBlank">
+        function <span class="apidocSignatureSpan">underscore.string.</span>isBlank
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isBlank(str) {
+  return (/^\s*$/).test(makeString(str));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.join" id="apidoc.element.underscore.string.join">
+        function <span class="apidocSignatureSpan">underscore.string.</span>join
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function join() {
+  var args = slice.call(arguments),
+    separator = args.shift();
+
+  return args.join(makeString(separator));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var makeString = require('./helper/makeString');
+var slice = [].slice;
+
+module.exports = function join() {
+  var args = slice.call(arguments),
+    separator = args.shift();
+
+  return args.<span class="apidocCodeKeywordSpan">join</span>(makeString(separator));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.levenshtein" id="apidoc.element.underscore.string.levenshtein">
+        function <span class="apidocSignatureSpan">underscore.string.</span>levenshtein
+        <span class="apidocSignatureSpan">(str1, str2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function levenshtein(str1, str2) {
+  'use strict';
+  str1 = makeString(str1);
+  str2 = makeString(str2);
+
+  // Short cut cases
+  if (str1 === str2) return 0;
+  if (!str1 || !str2) return Math.max(str1.length, str2.length);
+
+  // two rows
+  var prevRow = new Array(str2.length + 1);
+
+  // initialise previous row
+  for (var i = 0; i &lt; prevRow.length; ++i) {
+    prevRow[i] = i;
+  }
+
+  // calculate current row distance from previous row
+  for (i = 0; i &lt; str1.length; ++i) {
+    var nextCol = i + 1;
+
+    for (var j = 0; j &lt; str2.length; ++j) {
+      var curCol = nextCol;
+
+      // substution
+      nextCol = prevRow[j] + ( (str1.charAt(i) === str2.charAt(j)) ? 0 : 1 );
+      // insertion
+      var tmp = curCol + 1;
+      if (nextCol &gt; tmp) {
+        nextCol = tmp;
+      }
+      // deletion
+      tmp = prevRow[j + 1] + 1;
+      if (nextCol &gt; tmp) {
+        nextCol = tmp;
+      }
+
+      // copy current col value into previous (in preparation for next iteration)
+      prevRow[j] = curCol;
+    }
+
+    // copy last col value into previous (in preparation for next iteration)
+    prevRow[j] = nextCol;
+  }
+
+  return nextCol;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.lines" id="apidoc.element.underscore.string.lines">
+        function <span class="apidocSignatureSpan">underscore.string.</span>lines
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lines(str) {
+  if (str == null) return [];
+  return String(str).split(/\r\n?|\n/);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.ljust" id="apidoc.element.underscore.string.ljust">
+        function <span class="apidocSignatureSpan">underscore.string.</span>ljust
+        <span class="apidocSignatureSpan">(str, length, padStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rpad(str, length, padStr) {
+  return pad(str, length, padStr, 'right');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.lpad" id="apidoc.element.underscore.string.lpad">
+        function <span class="apidocSignatureSpan">underscore.string.</span>lpad
+        <span class="apidocSignatureSpan">(str, length, padStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lpad(str, length, padStr) {
+  return pad(str, length, padStr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.lrpad" id="apidoc.element.underscore.string.lrpad">
+        function <span class="apidocSignatureSpan">underscore.string.</span>lrpad
+        <span class="apidocSignatureSpan">(str, length, padStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lrpad(str, length, padStr) {
+  return pad(str, length, padStr, 'both');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.lstrip" id="apidoc.element.underscore.string.lstrip">
+        function <span class="apidocSignatureSpan">underscore.string.</span>lstrip
+        <span class="apidocSignatureSpan">(str, characters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ltrim(str, characters) {
+  str = makeString(str);
+  if (!characters &amp;&amp; nativeTrimLeft) return nativeTrimLeft.call(str);
+  characters = defaultToWhiteSpace(characters);
+  return str.replace(new RegExp('^' + characters + '+'), '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.ltrim" id="apidoc.element.underscore.string.ltrim">
+        function <span class="apidocSignatureSpan">underscore.string.</span>ltrim
+        <span class="apidocSignatureSpan">(str, characters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ltrim(str, characters) {
+  str = makeString(str);
+  if (!characters &amp;&amp; nativeTrimLeft) return nativeTrimLeft.call(str);
+  characters = defaultToWhiteSpace(characters);
+  return str.replace(new RegExp('^' + characters + '+'), '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.map" id="apidoc.element.underscore.string.map">
+        function <span class="apidocSignatureSpan">underscore.string.</span>map
+        <span class="apidocSignatureSpan">(str, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">map = function (str, callback) {
+  str = makeString(str);
+
+  if (str.length === 0 || typeof callback !== 'function') return str;
+
+  return str.replace(/./g, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.mapChars" id="apidoc.element.underscore.string.mapChars">
+        function <span class="apidocSignatureSpan">underscore.string.</span>mapChars
+        <span class="apidocSignatureSpan">(str, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapChars = function (str, callback) {
+  str = makeString(str);
+
+  if (str.length === 0 || typeof callback !== 'function') return str;
+
+  return str.replace(/./g, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.naturalCmp" id="apidoc.element.underscore.string.naturalCmp">
+        function <span class="apidocSignatureSpan">underscore.string.</span>naturalCmp
+        <span class="apidocSignatureSpan">(str1, str2)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function naturalCmp(str1, str2) {
+  if (str1 == str2) return 0;
+  if (!str1) return -1;
+  if (!str2) return 1;
+
+  var cmpRegex = /(\.\d+|\d+|\D+)/g,
+    tokens1 = String(str1).match(cmpRegex),
+    tokens2 = String(str2).match(cmpRegex),
+    count = Math.min(tokens1.length, tokens2.length);
+
+  for (var i = 0; i &lt; count; i++) {
+    var a = tokens1[i],
+      b = tokens2[i];
+
+    if (a !== b) {
+      var num1 = +a;
+      var num2 = +b;
+      if (num1 === num1 &amp;&amp; num2 === num2) {
+        return num1 &gt; num2 ? 1 : -1;
+      }
+      return a &lt; b ? -1 : 1;
+    }
+  }
+
+  if (tokens1.length != tokens2.length)
+    return tokens1.length - tokens2.length;
+
+  return str1 &lt; str2 ? -1 : 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.numberFormat" id="apidoc.element.underscore.string.numberFormat">
+        function <span class="apidocSignatureSpan">underscore.string.</span>numberFormat
+        <span class="apidocSignatureSpan">(number, dec, dsep, tsep)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function numberFormat(number, dec, dsep, tsep) {
+  if (isNaN(number) || number == null) return '';
+
+  number = number.toFixed(~~dec);
+  tsep = typeof tsep == 'string' ? tsep : ',';
+
+  var parts = number.split('.'),
+    fnums = parts[0],
+    decimals = parts[1] ? (dsep || '.') + parts[1] : '';
+
+  return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + tsep) + decimals;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.pad" id="apidoc.element.underscore.string.pad">
+        function <span class="apidocSignatureSpan">underscore.string.</span>pad
+        <span class="apidocSignatureSpan">(str, length, padStr, type)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function pad(str, length, padStr, type) {
+  str = makeString(str);
+  length = ~~length;
+
+  var padlen = 0;
+
+  if (!padStr)
+    padStr = ' ';
+  else if (padStr.length &gt; 1)
+    padStr = padStr.charAt(0);
+
+  switch (type) {
+  case 'right':
+    padlen = length - str.length;
+    return str + strRepeat(padStr, padlen);
+  case 'both':
+    padlen = length - str.length;
+    return strRepeat(padStr, Math.ceil(padlen / 2)) + str + strRepeat(padStr, Math.floor(padlen / 2));
+  default: // 'left'
+    padlen = length - str.length;
+    return strRepeat(padStr, padlen) + str;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.pred" id="apidoc.element.underscore.string.pred">
+        function <span class="apidocSignatureSpan">underscore.string.</span>pred
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function succ(str) {
+  return adjacent(str, -1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.prune" id="apidoc.element.underscore.string.prune">
+        function <span class="apidocSignatureSpan">underscore.string.</span>prune
+        <span class="apidocSignatureSpan">(str, length, pruneStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function prune(str, length, pruneStr) {
+  str = makeString(str);
+  length = ~~length;
+  pruneStr = pruneStr != null ? String(pruneStr) : '...';
+
+  if (str.length &lt;= length) return str;
+
+  var tmpl = function(c) {
+      return c.toUpperCase() !== c.toLowerCase() ? 'A' : ' ';
+    },
+    template = str.slice(0, length + 1).replace(/.(?=\W*\w*$)/g, tmpl); // 'Hello, world' -&gt; 'HellAA AAAAA'
+
+  if (template.slice(template.length - 2).match(/\w\w/))
+    template = template.replace(/\s*\S+$/, '');
+  else
+    template = rtrim(template.slice(0, template.length - 1));
+
+  return (template + pruneStr).length &gt; str.length ? str : str.slice(0, template.length) + pruneStr;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.q" id="apidoc.element.underscore.string.q">
+        function <span class="apidocSignatureSpan">underscore.string.</span>q
+        <span class="apidocSignatureSpan">(str, quoteChar)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function quote(str, quoteChar) {
+  return surround(str, quoteChar || '"');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.quote" id="apidoc.element.underscore.string.quote">
+        function <span class="apidocSignatureSpan">underscore.string.</span>quote
+        <span class="apidocSignatureSpan">(str, quoteChar)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function quote(str, quoteChar) {
+  return surround(str, quoteChar || '"');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.repeat" id="apidoc.element.underscore.string.repeat">
+        function <span class="apidocSignatureSpan">underscore.string.</span>repeat
+        <span class="apidocSignatureSpan">(str, qty, separator)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function repeat(str, qty, separator) {
+  str = makeString(str);
+
+  qty = ~~qty;
+
+  // using faster implementation if separator is not needed;
+  if (separator == null) return strRepeat(str, qty);
+
+  // this one is about 300x slower in Google Chrome
+<span class="apidocCodeCommentSpan">  /*eslint no-empty: 0*/
+</span>  for (var repeat = []; qty &gt; 0; repeat[--qty] = str) {}
+  return repeat.join(separator);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.replaceAll" id="apidoc.element.underscore.string.replaceAll">
+        function <span class="apidocSignatureSpan">underscore.string.</span>replaceAll
+        <span class="apidocSignatureSpan">(str, find, replace, ignorecase)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function replaceAll(str, find, replace, ignorecase) {
+  var flags = (ignorecase === true)?'gi':'g';
+  var reg = new RegExp(find, flags);
+
+  return makeString(str).replace(reg, replace);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.reverse" id="apidoc.element.underscore.string.reverse">
+        function <span class="apidocSignatureSpan">underscore.string.</span>reverse
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function reverse(str) {
+  return chars(str).reverse().join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var chars = require('./chars');
+
+module.exports = function reverse(str) {
+  return chars(str).<span class="apidocCodeKeywordSpan">reverse</span>().join('');
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.rjust" id="apidoc.element.underscore.string.rjust">
+        function <span class="apidocSignatureSpan">underscore.string.</span>rjust
+        <span class="apidocSignatureSpan">(str, length, padStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lpad(str, length, padStr) {
+  return pad(str, length, padStr);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.rpad" id="apidoc.element.underscore.string.rpad">
+        function <span class="apidocSignatureSpan">underscore.string.</span>rpad
+        <span class="apidocSignatureSpan">(str, length, padStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rpad(str, length, padStr) {
+  return pad(str, length, padStr, 'right');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.rstrip" id="apidoc.element.underscore.string.rstrip">
+        function <span class="apidocSignatureSpan">underscore.string.</span>rstrip
+        <span class="apidocSignatureSpan">(str, characters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rtrim(str, characters) {
+  str = makeString(str);
+  if (!characters &amp;&amp; nativeTrimRight) return nativeTrimRight.call(str);
+  characters = defaultToWhiteSpace(characters);
+  return str.replace(new RegExp(characters + '+$'), '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.rtrim" id="apidoc.element.underscore.string.rtrim">
+        function <span class="apidocSignatureSpan">underscore.string.</span>rtrim
+        <span class="apidocSignatureSpan">(str, characters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function rtrim(str, characters) {
+  str = makeString(str);
+  if (!characters &amp;&amp; nativeTrimRight) return nativeTrimRight.call(str);
+  characters = defaultToWhiteSpace(characters);
+  return str.replace(new RegExp(characters + '+$'), '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.slugify" id="apidoc.element.underscore.string.slugify">
+        function <span class="apidocSignatureSpan">underscore.string.</span>slugify
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function slugify(str) {
+  return trim(dasherize(cleanDiacritics(str).replace(/[^\w\s-]/g, '-').toLowerCase()), '-');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```shell
+    meteor add underscorestring:underscore.string
+```
+
+and you'll be able to access the library with the ***s*** global from both the server and the client.
+
+```javascript
+s.<span class="apidocCodeKeywordSpan">slugify</span>("Hello world!");
+// =&gt; hello-world
+
+s("   epeli  ").trim().capitalize().value();
+// =&gt; "Epeli"
+```
+
+[Meteor]: http://www.meteor.com/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.splice" id="apidoc.element.underscore.string.splice">
+        function <span class="apidocSignatureSpan">underscore.string.</span>splice
+        <span class="apidocSignatureSpan">(str, i, howmany, substr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function splice(str, i, howmany, substr) {
+  var arr = chars(str);
+  arr.splice(~~i, ~~howmany, substr);
+  return arr.join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+var chars = require('./chars');
+
+module.exports = function splice(str, i, howmany, substr) {
+  var arr = chars(str);
+  arr.<span class="apidocCodeKeywordSpan">splice</span>(~~i, ~~howmany, substr);
+  return arr.join('');
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.sprintf" id="apidoc.element.underscore.string.sprintf">
+        function <span class="apidocSignatureSpan">underscore.string.</span>sprintf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.startsWith" id="apidoc.element.underscore.string.startsWith">
+        function <span class="apidocSignatureSpan">underscore.string.</span>startsWith
+        <span class="apidocSignatureSpan">(str, starts, position)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function startsWith(str, starts, position) {
+  str = makeString(str);
+  starts = '' + starts;
+  position = position == null ? 0 : Math.min(toPositive(position), str.length);
+  return str.lastIndexOf(starts, position) === position;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    npm install underscore.string.fp
+
+```javascript
+var S = require('underscore.string.fp');
+var filter = require('lodash-fp').filter;
+var filter = require('ramda').filter;
+
+filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>('.'), [
+  '.vimrc',
+  'foo.md',
+  '.zshrc'
+]);
+// =&gt; ['.vimrc', '.zshrc']
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.strLeft" id="apidoc.element.underscore.string.strLeft">
+        function <span class="apidocSignatureSpan">underscore.string.</span>strLeft
+        <span class="apidocSignatureSpan">(str, sep)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function strLeft(str, sep) {
+  str = makeString(str);
+  sep = makeString(sep);
+  var pos = !sep ? -1 : str.indexOf(sep);
+  return~ pos ? str.slice(0, pos) : str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.strLeftBack" id="apidoc.element.underscore.string.strLeftBack">
+        function <span class="apidocSignatureSpan">underscore.string.</span>strLeftBack
+        <span class="apidocSignatureSpan">(str, sep)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function strLeftBack(str, sep) {
+  str = makeString(str);
+  sep = makeString(sep);
+  var pos = str.lastIndexOf(sep);
+  return~ pos ? str.slice(0, pos) : str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.strRight" id="apidoc.element.underscore.string.strRight">
+        function <span class="apidocSignatureSpan">underscore.string.</span>strRight
+        <span class="apidocSignatureSpan">(str, sep)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function strRight(str, sep) {
+  str = makeString(str);
+  sep = makeString(sep);
+  var pos = !sep ? -1 : str.indexOf(sep);
+  return~ pos ? str.slice(pos + sep.length, str.length) : str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.strRightBack" id="apidoc.element.underscore.string.strRightBack">
+        function <span class="apidocSignatureSpan">underscore.string.</span>strRightBack
+        <span class="apidocSignatureSpan">(str, sep)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function strRightBack(str, sep) {
+  str = makeString(str);
+  sep = makeString(sep);
+  var pos = !sep ? -1 : str.lastIndexOf(sep);
+  return~ pos ? str.slice(pos + sep.length, str.length) : str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.strip" id="apidoc.element.underscore.string.strip">
+        function <span class="apidocSignatureSpan">underscore.string.</span>strip
+        <span class="apidocSignatureSpan">(str, characters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function trim(str, characters) {
+  str = makeString(str);
+  if (!characters &amp;&amp; nativeTrim) return nativeTrim.call(str);
+  characters = defaultToWhiteSpace(characters);
+  return str.replace(new RegExp('^' + characters + '+|' + characters + '+$', 'g'), '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.stripTags" id="apidoc.element.underscore.string.stripTags">
+        function <span class="apidocSignatureSpan">underscore.string.</span>stripTags
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function stripTags(str) {
+  return makeString(str).replace(/&lt;\/?[^&gt;]+&gt;/g, '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.succ" id="apidoc.element.underscore.string.succ">
+        function <span class="apidocSignatureSpan">underscore.string.</span>succ
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function succ(str) {
+  return adjacent(str, 1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.surround" id="apidoc.element.underscore.string.surround">
+        function <span class="apidocSignatureSpan">underscore.string.</span>surround
+        <span class="apidocSignatureSpan">(str, wrapper)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function surround(str, wrapper) {
+  return [wrapper, str, wrapper].join('');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.swapCase" id="apidoc.element.underscore.string.swapCase">
+        function <span class="apidocSignatureSpan">underscore.string.</span>swapCase
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function swapCase(str) {
+  return makeString(str).replace(/\S/g, function(c) {
+    return c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.titleize" id="apidoc.element.underscore.string.titleize">
+        function <span class="apidocSignatureSpan">underscore.string.</span>titleize
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function titleize(str) {
+  return makeString(str).toLowerCase().replace(/(?:^|\s|-)\S/g, function(c) {
+    return c.toUpperCase();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.toBool" id="apidoc.element.underscore.string.toBool">
+        function <span class="apidocSignatureSpan">underscore.string.</span>toBool
+        <span class="apidocSignatureSpan">(str, trueValues, falseValues)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toBoolean(str, trueValues, falseValues) {
+  if (typeof str === 'number') str = '' + str;
+  if (typeof str !== 'string') return !!str;
+  str = trim(str);
+  if (boolMatch(str, trueValues || ['true', '1'])) return true;
+  if (boolMatch(str, falseValues || ['false', '0'])) return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.toBoolean" id="apidoc.element.underscore.string.toBoolean">
+        function <span class="apidocSignatureSpan">underscore.string.</span>toBoolean
+        <span class="apidocSignatureSpan">(str, trueValues, falseValues)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toBoolean(str, trueValues, falseValues) {
+  if (typeof str === 'number') str = '' + str;
+  if (typeof str !== 'string') return !!str;
+  str = trim(str);
+  if (boolMatch(str, trueValues || ['true', '1'])) return true;
+  if (boolMatch(str, falseValues || ['false', '0'])) return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.toNumber" id="apidoc.element.underscore.string.toNumber">
+        function <span class="apidocSignatureSpan">underscore.string.</span>toNumber
+        <span class="apidocSignatureSpan">(num, precision)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toNumber(num, precision) {
+  if (num == null) return 0;
+  var factor = Math.pow(10, isFinite(precision) ? precision : 0);
+  return Math.round(num * factor) / factor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.toSentence" id="apidoc.element.underscore.string.toSentence">
+        function <span class="apidocSignatureSpan">underscore.string.</span>toSentence
+        <span class="apidocSignatureSpan">(array, separator, lastSeparator, serial)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toSentence(array, separator, lastSeparator, serial) {
+  separator = separator || ', ';
+  lastSeparator = lastSeparator || ' and ';
+  var a = array.slice(),
+    lastMember = a.pop();
+
+  if (array.length &gt; 2 &amp;&amp; serial) lastSeparator = rtrim(separator) + lastSeparator;
+
+  return a.length ? a.join(separator) + lastSeparator + lastMember : lastMember;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.toSentenceSerial" id="apidoc.element.underscore.string.toSentenceSerial">
+        function <span class="apidocSignatureSpan">underscore.string.</span>toSentenceSerial
+        <span class="apidocSignatureSpan">(array, sep, lastSep)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toSentenceSerial(array, sep, lastSep) {
+  return toSentence(array, sep, lastSep, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.trim" id="apidoc.element.underscore.string.trim">
+        function <span class="apidocSignatureSpan">underscore.string.</span>trim
+        <span class="apidocSignatureSpan">(str, characters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function trim(str, characters) {
+  str = makeString(str);
+  if (!characters &amp;&amp; nativeTrim) return nativeTrim.call(str);
+  characters = defaultToWhiteSpace(characters);
+  return str.replace(new RegExp('^' + characters + '+|' + characters + '+$', 'g'), '');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+or load the full library to enable chaining
+
+```javascript
+var s = require("underscore.string");
+
+s("   epeli  ").<span class="apidocCodeKeywordSpan">trim</span>().capitalize().value();
+// =&gt; "Epeli"
+```
+
+but especially when using with [Browserify][] the individual function approach
+is recommended because using it you only add those functions to your bundle you
+use.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.truncate" id="apidoc.element.underscore.string.truncate">
+        function <span class="apidocSignatureSpan">underscore.string.</span>truncate
+        <span class="apidocSignatureSpan">(str, length, truncateStr)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function truncate(str, length, truncateStr) {
+  str = makeString(str);
+  truncateStr = truncateStr || '...';
+  length = ~~length;
+  return str.length &gt; length ? str.slice(0, length) + truncateStr : str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.underscored" id="apidoc.element.underscore.string.underscored">
+        function <span class="apidocSignatureSpan">underscore.string.</span>underscored
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function underscored(str) {
+  return trim(str).replace(/([a-z\d])([A-Z]+)/g, '$1_$2').replace(/[-\s]+/g, '_').toLowerCase();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.unescapeHTML" id="apidoc.element.underscore.string.unescapeHTML">
+        function <span class="apidocSignatureSpan">underscore.string.</span>unescapeHTML
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unescapeHTML(str) {
+  return makeString(str).replace(/\&amp;([^;]+);/g, function(entity, entityCode) {
+    var match;
+
+    if (entityCode in htmlEntities) {
+      return htmlEntities[entityCode];
+<span class="apidocCodeCommentSpan">    /*eslint no-cond-assign: 0*/
+</span>    } else if (match = entityCode.match(/^#x([\da-fA-F]+)$/)) {
+      return String.fromCharCode(parseInt(match[1], 16));
+    /*eslint no-cond-assign: 0*/
+    } else if (match = entityCode.match(/^#(\d+)$/)) {
+      return String.fromCharCode(~~match[1]);
+    } else {
+      return entity;
+    }
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.unquote" id="apidoc.element.underscore.string.unquote">
+        function <span class="apidocSignatureSpan">underscore.string.</span>unquote
+        <span class="apidocSignatureSpan">(str, quoteChar)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function unquote(str, quoteChar) {
+  quoteChar = quoteChar || '"';
+  if (str[0] === quoteChar &amp;&amp; str[str.length - 1] === quoteChar)
+    return str.slice(1, str.length - 1);
+  else return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.vsprintf" id="apidoc.element.underscore.string.vsprintf">
+        function <span class="apidocSignatureSpan">underscore.string.</span>vsprintf
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function deprecated() {
+  warned = exports.printDeprecationMessage(msg, warned, deprecated);
+  if (new.target) {
+    return Reflect.construct(fn, arguments, new.target);
+  }
+  return fn.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.words" id="apidoc.element.underscore.string.words">
+        function <span class="apidocSignatureSpan">underscore.string.</span>words
+        <span class="apidocSignatureSpan">(str, delimiter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function words(str, delimiter) {
+  if (isBlank(str)) return [];
+  return trim(str, delimiter).split(delimiter || /\s+/);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.wrap" id="apidoc.element.underscore.string.wrap">
+        function <span class="apidocSignatureSpan">underscore.string.</span>wrap
+        <span class="apidocSignatureSpan">(str, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function wrap(str, options){
+  str = makeString(str);
+
+  options = options || {};
+
+  var width = options.width || 75;
+  var seperator = options.seperator || '\n';
+  var cut = options.cut || false;
+  var preserveSpaces = options.preserveSpaces || false;
+  var trailingSpaces = options.trailingSpaces || false;
+
+  var result;
+
+  if(width &lt;= 0){
+    return str;
+  }
+
+  else if(!cut){
+
+    var words = str.split(' ');
+    var current_column = 0;
+    result = '';
+
+    while(words.length &gt; 0){
+
+      // if adding a space and the next word would cause this line to be longer than width...
+      if(1 + words[0].length + current_column &gt; width){
+        //start a new line if this line is not already empty
+        if(current_column &gt; 0){
+          // add a space at the end of the line is preserveSpaces is true
+          if (preserveSpaces){
+            result += ' ';
+            current_column++;
+          }
+          // fill the rest of the line with spaces if trailingSpaces option is true
+          else if(trailingSpaces){
+            while(current_column &lt; width){
+              result += ' ';
+              current_column++;
+            }
+          }
+          //start new line
+          result += seperator;
+          current_column = 0;
+        }
+      }
+
+      // if not at the begining of the line, add a space in front of the word
+      if(current_column &gt; 0){
+        result += ' ';
+        current_column++;
+      }
+
+      // tack on the next word, update current column, a pop words array
+      result += words[0];
+      current_column += words[0].length;
+      words.shift();
+
+    }
+
+    // fill the rest of the line with spaces if trailingSpaces option is true
+    if(trailingSpaces){
+      while(current_column &lt; width){
+        result += ' ';
+        current_column++;
+      }
+    }
+
+    return result;
+
+  }
+
+  else {
+
+    var index = 0;
+    result = '';
+
+    // walk through each character and add seperators where appropriate
+    while(index &lt; str.length){
+      if(index % width == 0 &amp;&amp; index &gt; 0){
+        result += seperator;
+      }
+      result += str.charAt(index);
+      index++;
+    }
+
+    // fill the rest of the line with spaces if trailingSpaces option is true
+    if(trailingSpaces){
+      while(index % width &gt; 0){
+        result += ' ';
+        index++;
+      }
+    }
+
+    return result;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
