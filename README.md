@@ -1,11 +1,13 @@
 # api documentation for  [underscore.string (v3.3.4)](http://epeli.github.com/underscore.string/)  [![npm package](https://img.shields.io/npm/v/npmdoc-underscore.string.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-underscore.string) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-underscore.string.svg)](https://travis-ci.org/npmdoc/node-npmdoc-underscore.string)
 #### String manipulation extensions for Underscore.js javascript library.
 
-[![NPM](https://nodei.co/npm/underscore.string.png?downloads=true)](https://www.npmjs.com/package/underscore.string)
+[![NPM](https://nodei.co/npm/underscore.string.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/underscore.string)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-underscore.string/build/screen-capture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-underscore.string_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-underscore.string/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://npmdoc.github.io/node-npmdoc-underscore.string/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-underscore.string/build/apidoc.html)
 
-![package-listing](https://npmdoc.github.io/node-npmdoc-underscore.string/build/screen-capture.npmPackageListing.svg)
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-underscore.string/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-underscore.string/build/screenCapture.npmPackageDependencyTree.svg)
 
 
 
@@ -20,45 +22,36 @@
     "contributors": [
         {
             "name": "Esa-Matti Suuronen",
-            "email": "esa-matti@suuronen.org",
             "url": "http://esa-matti.suuronen.org/"
         },
         {
-            "name": "Edward Tsech",
-            "email": "edtsech@gmail.com"
+            "name": "Edward Tsech"
         },
         {
             "name": "Pavel Pravosud",
-            "email": "pavel@pravosud.com",
             "url": "<https://github.com/rwz>"
         },
         {
             "name": "Sasha Koss",
-            "email": "kossnocorp@gmail.com",
             "url": "http://koss.nocorp.me/"
         },
         {
-            "name": "Vladimir Dronnikov",
-            "email": "dronnikov@gmail.com"
+            "name": "Vladimir Dronnikov"
         },
         {
             "name": "Pete Kruckenberg",
-            "email": "https://github.com/kruckenb",
             "url": "<https://github.com/kruckenb>"
         },
         {
             "name": "Paul Chavard",
-            "email": "paul@chavard.net",
             "url": "<http://tchak.net>"
         },
         {
             "name": "Ed Finkler",
-            "email": "coj@funkatron.com",
             "url": "<http://funkatron.com>"
         },
         {
             "name": "Christoph Hermann",
-            "email": "schtoeffel@gmail.com",
             "url": "<https://github.com/stoeffel>"
         }
     ],
@@ -106,25 +99,20 @@
     "main": "./index.js",
     "maintainers": [
         {
-            "name": "edtsech",
-            "email": "edtsech@gmail.com"
+            "name": "edtsech"
         },
         {
-            "name": "rwz",
-            "email": "rwz@duckroll.ru"
+            "name": "rwz"
         },
         {
-            "name": "epeli",
-            "email": "esa-matti@suuronen.org"
+            "name": "epeli"
         },
         {
-            "name": "schtoeffel",
-            "email": "schtoeffel@gmail.com"
+            "name": "schtoeffel"
         }
     ],
     "name": "underscore.string",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/epeli/underscore.string.git"
@@ -151,6 +139,7 @@
 # <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
 
 #### [module underscore.string](#apidoc.module.underscore.string)
+1.  [function <span class="apidocSignatureSpan">underscore.</span>string (value)](#apidoc.element.underscore.string.string)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>camelcase (str, decapitalize)](#apidoc.element.underscore.string.camelcase)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>camelize (str, decapitalize)](#apidoc.element.underscore.string.camelize)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>capitalize (str, lowercaseRest)](#apidoc.element.underscore.string.capitalize)
@@ -216,6 +205,7 @@
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>toNumber (num, precision)](#apidoc.element.underscore.string.toNumber)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>toSentence (array, separator, lastSeparator, serial)](#apidoc.element.underscore.string.toSentence)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>toSentenceSerial (array, sep, lastSep)](#apidoc.element.underscore.string.toSentenceSerial)
+1.  [function <span class="apidocSignatureSpan">underscore.string.</span>toString ()](#apidoc.element.underscore.string.toString)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>trim (str, characters)](#apidoc.element.underscore.string.trim)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>truncate (str, length, truncateStr)](#apidoc.element.underscore.string.truncate)
 1.  [function <span class="apidocSignatureSpan">underscore.string.</span>underscored (str)](#apidoc.element.underscore.string.underscored)
@@ -229,6 +219,20 @@
 
 
 # <a name="apidoc.module.underscore.string"></a>[module underscore.string](#apidoc.module.underscore.string)
+
+#### <a name="apidoc.element.underscore.string.string"></a>[function <span class="apidocSignatureSpan">underscore.</span>string (value)](#apidoc.element.underscore.string.string)
+- description and source-code
+```javascript
+function s(value) {
+<span class="apidocCodeCommentSpan">  /* jshint validthis: true */
+</span>  if (!(this instanceof s)) return new s(value);
+  this._wrapped = value;
+}
+```
+- example usage
+```shell
+n/a
+```
 
 #### <a name="apidoc.element.underscore.string.camelcase"></a>[function <span class="apidocSignatureSpan">underscore.string.</span>camelcase (str, decapitalize)](#apidoc.element.underscore.string.camelcase)
 - description and source-code
@@ -601,17 +605,7 @@ function join() {
 ```
 - example usage
 ```shell
-...
-var makeString = require('./helper/makeString');
-var slice = [].slice;
-
-module.exports = function join() {
-  var args = slice.call(arguments),
-    separator = args.shift();
-
-  return args.join(makeString(separator));
-};
-...
+n/a
 ```
 
 #### <a name="apidoc.element.underscore.string.levenshtein"></a>[function <span class="apidocSignatureSpan">underscore.string.</span>levenshtein (str1, str2)](#apidoc.element.underscore.string.levenshtein)
@@ -982,17 +976,7 @@ function reverse(str) {
 ```
 - example usage
 ```shell
-...
-
-
-
-
-var chars = require('./chars');
-
-module.exports = function reverse(str) {
-  return chars(str).reverse().join('');
-};
-...
+n/a
 ```
 
 #### <a name="apidoc.element.underscore.string.rjust"></a>[function <span class="apidocSignatureSpan">underscore.string.</span>rjust (str, length, padStr)](#apidoc.element.underscore.string.rjust)
@@ -1088,18 +1072,7 @@ function splice(str, i, howmany, substr) {
 ```
 - example usage
 ```shell
-...
-
-
-
-var chars = require('./chars');
-
-module.exports = function splice(str, i, howmany, substr) {
-  var arr = chars(str);
-  arr.splice(~~i, ~~howmany, substr);
-  return arr.join('');
-};
-...
+n/a
 ```
 
 #### <a name="apidoc.element.underscore.string.sprintf"></a>[function <span class="apidocSignatureSpan">underscore.string.</span>sprintf ()](#apidoc.element.underscore.string.sprintf)
@@ -1357,6 +1330,18 @@ n/a
 ```javascript
 function toSentenceSerial(array, sep, lastSep) {
   return toSentence(array, sep, lastSep, true);
+}
+```
+- example usage
+```shell
+n/a
+```
+
+#### <a name="apidoc.element.underscore.string.toString"></a>[function <span class="apidocSignatureSpan">underscore.string.</span>toString ()](#apidoc.element.underscore.string.toString)
+- description and source-code
+```javascript
+toString = function () {
+    return toString;
 }
 ```
 - example usage
