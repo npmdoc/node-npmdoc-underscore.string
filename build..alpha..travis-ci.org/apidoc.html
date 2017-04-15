@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.string">
+            function <span class="apidocSignatureSpan">underscore.</span>string
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.underscore.string.camelcase">
             function <span class="apidocSignatureSpan">underscore.string.</span>camelcase
             <span class="apidocSignatureSpan">(str, decapitalize)</span>
@@ -648,6 +657,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.toString">
+            function <span class="apidocSignatureSpan">underscore.string.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.underscore.string.trim">
             function <span class="apidocSignatureSpan">underscore.string.</span>trim
             <span class="apidocSignatureSpan">(str, characters)</span>
@@ -730,6 +748,23 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.underscore.string" id="apidoc.module.underscore.string">module underscore.string</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.string" id="apidoc.element.underscore.string.string">
+        function <span class="apidocSignatureSpan">underscore.</span>string
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function s(value) {
+<span class="apidocCodeCommentSpan">  /* jshint validthis: true */
+</span>  if (!(this instanceof s)) return new s(value);
+  this._wrapped = value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -1170,17 +1205,7 @@ If you want to use underscore.string with [ramdajs](http://ramdajs.com/) or [Lo-
 
   return args.join(makeString(separator));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-var makeString = require(&#x27;./helper/makeString&#x27;);
-var slice = [].slice;
-
-module.exports = function join() {
-  var args = slice.call(arguments),
-    separator = args.shift();
-
-  return args.<span class="apidocCodeKeywordSpan">join</span>(makeString(separator));
-};
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1608,17 +1633,7 @@ module.exports = function join() {
     <li>description and source-code<pre class="apidocCodePre">function reverse(str) {
   return chars(str).reverse().join(&#x27;&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-
-
-
-var chars = require(&#x27;./chars&#x27;);
-
-module.exports = function reverse(str) {
-  return chars(str).<span class="apidocCodeKeywordSpan">reverse</span>().join(&#x27;&#x27;);
-};
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1732,18 +1747,7 @@ s(&#x22;   epeli  &#x22;).trim().capitalize().value();
   arr.splice(~~i, ~~howmany, substr);
   return arr.join(&#x27;&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-
-
-
-var chars = require(&#x27;./chars&#x27;);
-
-module.exports = function splice(str, i, howmany, substr) {
-  var arr = chars(str);
-  arr.<span class="apidocCodeKeywordSpan">splice</span>(~~i, ~~howmany, substr);
-  return arr.join(&#x27;&#x27;);
-};
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -2055,6 +2059,21 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toSentenceSerial(array, sep, lastSep) {
   return toSentence(array, sep, lastSep, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.underscore.string.toString" id="apidoc.element.underscore.string.toString">
+        function <span class="apidocSignatureSpan">underscore.string.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return toString;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
