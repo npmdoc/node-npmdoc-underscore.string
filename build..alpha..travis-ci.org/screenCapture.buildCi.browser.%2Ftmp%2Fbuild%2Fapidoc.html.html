@@ -650,15 +650,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.underscore.string.toString">
-            function <span class="apidocSignatureSpan">underscore.string.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.underscore.string.trim">
             function <span class="apidocSignatureSpan">underscore.string.</span>trim
             <span class="apidocSignatureSpan">(str, characters)</span>
@@ -1198,7 +1189,17 @@ If you want to use underscore.string with [ramdajs](http://ramdajs.com/) or [Lo-
 
   return args.join(makeString(separator));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var makeString = require('./helper/makeString');
+var slice = [].slice;
+
+module.exports = function join() {
+  var args = slice.call(arguments),
+    separator = args.shift();
+
+  return args.<span class="apidocCodeKeywordSpan">join</span>(makeString(separator));
+};
+...</pre></li>
     </ul>
 
 
@@ -1626,7 +1627,17 @@ If you want to use underscore.string with [ramdajs](http://ramdajs.com/) or [Lo-
     <li>description and source-code<pre class="apidocCodePre">function reverse(str) {
   return chars(str).reverse().join('');
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var chars = require('./chars');
+
+module.exports = function reverse(str) {
+  return chars(str).<span class="apidocCodeKeywordSpan">reverse</span>().join('');
+};
+...</pre></li>
     </ul>
 
 
@@ -1740,7 +1751,18 @@ s("   epeli  ").trim().capitalize().value();
   arr.splice(~~i, ~~howmany, substr);
   return arr.join('');
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+var chars = require('./chars');
+
+module.exports = function splice(str, i, howmany, substr) {
+  var arr = chars(str);
+  arr.<span class="apidocCodeKeywordSpan">splice</span>(~~i, ~~howmany, substr);
+  return arr.join('');
+};
+...</pre></li>
     </ul>
 
 
@@ -2052,21 +2074,6 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>('.'), [
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toSentenceSerial(array, sep, lastSep) {
   return toSentence(array, sep, lastSep, true);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.underscore.string.toString" id="apidoc.element.underscore.string.toString">
-        function <span class="apidocSignatureSpan">underscore.string.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return toString;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>

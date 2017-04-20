@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="http://epeli.github.com/underscore.string/"
-
-    >underscore.string (v3.3.4)</a>
+    <a href="http://epeli.github.com/underscore.string/">underscore.string (v3.3.4)</a>
 </h1>
 <h4>String manipulation extensions for Underscore.js javascript library.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.underscore.string">module underscore.string</a><ol>
 
@@ -767,7 +760,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function camelize(str, decapitalize) {
   str = trim(str).replace(/[-_\s]+(.)?/g, function(match, c) {
-    return c ? c.toUpperCase() : &#x27;&#x27;;
+    return c ? c.toUpperCase() : '';
   });
 
   if (decapitalize === true) {
@@ -790,7 +783,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function camelize(str, decapitalize) {
   str = trim(str).replace(/[-_\s]+(.)?/g, function(match, c) {
-    return c ? c.toUpperCase() : &#x27;&#x27;;
+    return c ? c.toUpperCase() : '';
   });
 
   if (decapitalize === true) {
@@ -823,10 +816,10 @@
 or load the full library to enable chaining
 
 ```javascript
-var s = require(&#x22;underscore.string&#x22;);
+var s = require("underscore.string");
 
-s(&#x22;   epeli  &#x22;).trim().<span class="apidocCodeKeywordSpan">capitalize</span>().value();
-// =&#x3e; &#x22;Epeli&#x22;
+s("   epeli  ").trim().<span class="apidocCodeKeywordSpan">capitalize</span>().value();
+// =&gt; "Epeli"
 ```
 
 but especially when using with [Browserify][] the individual function approach
@@ -845,7 +838,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function lrpad(str, length, padStr) {
-  return pad(str, length, padStr, &#x27;both&#x27;);
+  return pad(str, length, padStr, 'both');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -860,7 +853,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function chars(str) {
-  return makeString(str).split(&#x27;&#x27;);
+  return makeString(str).split('');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -878,7 +871,7 @@ use.
   if (str == null) return [];
   str = String(str);
   step = ~~step;
-  return step &#x3e; 0 ? str.match(new RegExp(&#x27;.{1,&#x27; + step + &#x27;}&#x27;, &#x27;g&#x27;)) : [str];
+  return step &gt; 0 ? str.match(new RegExp('.{1,' + step + '}', 'g')) : [str];
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -894,7 +887,7 @@ use.
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function classify(str) {
   str = makeString(str);
-  return capitalize(camelize(str.replace(/[\W_]/g, &#x27; &#x27;)).replace(/\s/g, &#x27;&#x27;));
+  return capitalize(camelize(str.replace(/[\W_]/g, ' ')).replace(/\s/g, ''));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -909,7 +902,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function clean(str) {
-  return trim(str).replace(/\s\s+/g, &#x27; &#x27;);
+  return trim(str).replace(/\s\s+/g, ' ');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -942,7 +935,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function include(str, needle) {
-  if (needle === &#x27;&#x27;) return true;
+  if (needle === '') return true;
   return makeString(str).indexOf(needle) !== -1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -978,7 +971,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function dasherize(str) {
-  return trim(str).replace(/([A-Z])/g, &#x27;-$1&#x27;).replace(/[-_\s]+/g, &#x27;-&#x27;).toLowerCase();
+  return trim(str).replace(/([A-Z])/g, '-$1').replace(/[-_\s]+/g, '-').toLowerCase();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1015,13 +1008,13 @@ use.
 
   if (indent === 0) return str;
 
-  if (typeof pattern === &#x27;string&#x27;) {
-    reg = new RegExp(&#x27;^&#x27; + pattern, &#x27;gm&#x27;);
+  if (typeof pattern === 'string') {
+    reg = new RegExp('^' + pattern, 'gm');
   } else {
-    reg = new RegExp(&#x27;^[ \\t]{&#x27; + indent + &#x27;}&#x27;, &#x27;gm&#x27;);
+    reg = new RegExp('^[ \\t]{' + indent + '}', 'gm');
   }
 
-  return str.replace(reg, &#x27;&#x27;);
+  return str.replace(reg, '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1037,13 +1030,13 @@ use.
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function endsWith(str, ends, position) {
   str = makeString(str);
-  ends = &#x27;&#x27; + ends;
-  if (typeof position == &#x27;undefined&#x27;) {
+  ends = '' + ends;
+  if (typeof position == 'undefined') {
     position = str.length - ends.length;
   } else {
     position = Math.min(toPositive(position), str.length) - ends.length;
   }
-  return position &#x3e;= 0 &#x26;&#x26; str.indexOf(ends, position) === position;
+  return position &gt;= 0 &amp;&amp; str.indexOf(ends, position) === position;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1060,7 +1053,7 @@ use.
     <li>description and source-code<pre class="apidocCodePre">function escapeHTML(str) {
 
   return makeString(str).replace(regex, function(m) {
-    return &#x27;&#x26;&#x27; + escapeChars[m] + &#x27;;&#x27;;
+    return '&amp;' + escapeChars[m] + ';';
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1076,7 +1069,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function escapeRegExp(str) {
-  return makeString(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, &#x27;\\$1&#x27;);
+  return makeString(str).replace(/([.*+?^=!:${}()|[\]\/\\])/g, '\\$1');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1110,7 +1103,7 @@ It is still possible use as Underscore.js/Lo-Dash extension
 ```javascript
 _.mixin(s.<span class="apidocCodeKeywordSpan">exports</span>());
 ```
-But it&#x27;s not recommended since `include`, `contains`, `reverse` and `join`
+But it's not recommended since `include`, `contains`, `reverse` and `join`
 are dropped because they collide with the functions already defined by Underscore.js.
 
 ### Lo-Dash-FP/Ramda integration
@@ -1130,7 +1123,7 @@ If you want to use underscore.string with [ramdajs](http://ramdajs.com/) or [Lo-
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function humanize(str) {
-  return capitalize(trim(underscored(str).replace(/_id$/, &#x27;&#x27;).replace(/_/g, &#x27; &#x27;)));
+  return capitalize(trim(underscored(str).replace(/_id$/, '').replace(/_/g, ' ')));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1145,7 +1138,7 @@ If you want to use underscore.string with [ramdajs](http://ramdajs.com/) or [Lo-
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function include(str, needle) {
-  if (needle === &#x27;&#x27;) return true;
+  if (needle === '') return true;
   return makeString(str).indexOf(needle) !== -1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1197,7 +1190,7 @@ If you want to use underscore.string with [ramdajs](http://ramdajs.com/) or [Lo-
   return args.join(makeString(separator));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var makeString = require(&#x27;./helper/makeString&#x27;);
+var makeString = require('./helper/makeString');
 var slice = [].slice;
 
 module.exports = function join() {
@@ -1219,7 +1212,7 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function levenshtein(str1, str2) {
-  &#x27;use strict&#x27;;
+  'use strict';
   str1 = makeString(str1);
   str2 = makeString(str2);
 
@@ -1231,27 +1224,27 @@ module.exports = function join() {
   var prevRow = new Array(str2.length + 1);
 
   // initialise previous row
-  for (var i = 0; i &#x3c; prevRow.length; ++i) {
+  for (var i = 0; i &lt; prevRow.length; ++i) {
     prevRow[i] = i;
   }
 
   // calculate current row distance from previous row
-  for (i = 0; i &#x3c; str1.length; ++i) {
+  for (i = 0; i &lt; str1.length; ++i) {
     var nextCol = i + 1;
 
-    for (var j = 0; j &#x3c; str2.length; ++j) {
+    for (var j = 0; j &lt; str2.length; ++j) {
       var curCol = nextCol;
 
       // substution
       nextCol = prevRow[j] + ( (str1.charAt(i) === str2.charAt(j)) ? 0 : 1 );
       // insertion
       var tmp = curCol + 1;
-      if (nextCol &#x3e; tmp) {
+      if (nextCol &gt; tmp) {
         nextCol = tmp;
       }
       // deletion
       tmp = prevRow[j + 1] + 1;
-      if (nextCol &#x3e; tmp) {
+      if (nextCol &gt; tmp) {
         nextCol = tmp;
       }
 
@@ -1294,7 +1287,7 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function rpad(str, length, padStr) {
-  return pad(str, length, padStr, &#x27;right&#x27;);
+  return pad(str, length, padStr, 'right');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1324,7 +1317,7 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function lrpad(str, length, padStr) {
-  return pad(str, length, padStr, &#x27;both&#x27;);
+  return pad(str, length, padStr, 'both');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1340,9 +1333,9 @@ module.exports = function join() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ltrim(str, characters) {
   str = makeString(str);
-  if (!characters &#x26;&#x26; nativeTrimLeft) return nativeTrimLeft.call(str);
+  if (!characters &amp;&amp; nativeTrimLeft) return nativeTrimLeft.call(str);
   characters = defaultToWhiteSpace(characters);
-  return str.replace(new RegExp(&#x27;^&#x27; + characters + &#x27;+&#x27;), &#x27;&#x27;);
+  return str.replace(new RegExp('^' + characters + '+'), '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1358,9 +1351,9 @@ module.exports = function join() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function ltrim(str, characters) {
   str = makeString(str);
-  if (!characters &#x26;&#x26; nativeTrimLeft) return nativeTrimLeft.call(str);
+  if (!characters &amp;&amp; nativeTrimLeft) return nativeTrimLeft.call(str);
   characters = defaultToWhiteSpace(characters);
-  return str.replace(new RegExp(&#x27;^&#x27; + characters + &#x27;+&#x27;), &#x27;&#x27;);
+  return str.replace(new RegExp('^' + characters + '+'), '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1377,7 +1370,7 @@ module.exports = function join() {
     <li>description and source-code<pre class="apidocCodePre">map = function (str, callback) {
   str = makeString(str);
 
-  if (str.length === 0 || typeof callback !== &#x27;function&#x27;) return str;
+  if (str.length === 0 || typeof callback !== 'function') return str;
 
   return str.replace(/./g, callback);
 }</pre></li>
@@ -1396,7 +1389,7 @@ module.exports = function join() {
     <li>description and source-code<pre class="apidocCodePre">mapChars = function (str, callback) {
   str = makeString(str);
 
-  if (str.length === 0 || typeof callback !== &#x27;function&#x27;) return str;
+  if (str.length === 0 || typeof callback !== 'function') return str;
 
   return str.replace(/./g, callback);
 }</pre></li>
@@ -1422,24 +1415,24 @@ module.exports = function join() {
     tokens2 = String(str2).match(cmpRegex),
     count = Math.min(tokens1.length, tokens2.length);
 
-  for (var i = 0; i &#x3c; count; i++) {
+  for (var i = 0; i &lt; count; i++) {
     var a = tokens1[i],
       b = tokens2[i];
 
     if (a !== b) {
       var num1 = +a;
       var num2 = +b;
-      if (num1 === num1 &#x26;&#x26; num2 === num2) {
-        return num1 &#x3e; num2 ? 1 : -1;
+      if (num1 === num1 &amp;&amp; num2 === num2) {
+        return num1 &gt; num2 ? 1 : -1;
       }
-      return a &#x3c; b ? -1 : 1;
+      return a &lt; b ? -1 : 1;
     }
   }
 
   if (tokens1.length != tokens2.length)
     return tokens1.length - tokens2.length;
 
-  return str1 &#x3c; str2 ? -1 : 1;
+  return str1 &lt; str2 ? -1 : 1;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1454,16 +1447,16 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function numberFormat(number, dec, dsep, tsep) {
-  if (isNaN(number) || number == null) return &#x27;&#x27;;
+  if (isNaN(number) || number == null) return '';
 
   number = number.toFixed(~~dec);
-  tsep = typeof tsep == &#x27;string&#x27; ? tsep : &#x27;,&#x27;;
+  tsep = typeof tsep == 'string' ? tsep : ',';
 
-  var parts = number.split(&#x27;.&#x27;),
+  var parts = number.split('.'),
     fnums = parts[0],
-    decimals = parts[1] ? (dsep || &#x27;.&#x27;) + parts[1] : &#x27;&#x27;;
+    decimals = parts[1] ? (dsep || '.') + parts[1] : '';
 
-  return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, &#x27;$1&#x27; + tsep) + decimals;
+  return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + tsep) + decimals;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1484,18 +1477,18 @@ module.exports = function join() {
   var padlen = 0;
 
   if (!padStr)
-    padStr = &#x27; &#x27;;
-  else if (padStr.length &#x3e; 1)
+    padStr = ' ';
+  else if (padStr.length &gt; 1)
     padStr = padStr.charAt(0);
 
   switch (type) {
-  case &#x27;right&#x27;:
+  case 'right':
     padlen = length - str.length;
     return str + strRepeat(padStr, padlen);
-  case &#x27;both&#x27;:
+  case 'both':
     padlen = length - str.length;
     return strRepeat(padStr, Math.ceil(padlen / 2)) + str + strRepeat(padStr, Math.floor(padlen / 2));
-  default: // &#x27;left&#x27;
+  default: // 'left'
     padlen = length - str.length;
     return strRepeat(padStr, padlen) + str;
   }
@@ -1530,21 +1523,21 @@ module.exports = function join() {
     <li>description and source-code<pre class="apidocCodePre">function prune(str, length, pruneStr) {
   str = makeString(str);
   length = ~~length;
-  pruneStr = pruneStr != null ? String(pruneStr) : &#x27;...&#x27;;
+  pruneStr = pruneStr != null ? String(pruneStr) : '...';
 
-  if (str.length &#x3c;= length) return str;
+  if (str.length &lt;= length) return str;
 
   var tmpl = function(c) {
-      return c.toUpperCase() !== c.toLowerCase() ? &#x27;A&#x27; : &#x27; &#x27;;
+      return c.toUpperCase() !== c.toLowerCase() ? 'A' : ' ';
     },
-    template = str.slice(0, length + 1).replace(/.(?=\W*\w*$)/g, tmpl); // &#x27;Hello, world&#x27; -&#x3e; &#x27;HellAA AAAAA&#x27;
+    template = str.slice(0, length + 1).replace(/.(?=\W*\w*$)/g, tmpl); // 'Hello, world' -&gt; 'HellAA AAAAA'
 
   if (template.slice(template.length - 2).match(/\w\w/))
-    template = template.replace(/\s*\S+$/, &#x27;&#x27;);
+    template = template.replace(/\s*\S+$/, '');
   else
     template = rtrim(template.slice(0, template.length - 1));
 
-  return (template + pruneStr).length &#x3e; str.length ? str : str.slice(0, template.length) + pruneStr;
+  return (template + pruneStr).length &gt; str.length ? str : str.slice(0, template.length) + pruneStr;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1559,7 +1552,7 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function quote(str, quoteChar) {
-  return surround(str, quoteChar || &#x27;&#x22;&#x27;);
+  return surround(str, quoteChar || '"');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1574,7 +1567,7 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function quote(str, quoteChar) {
-  return surround(str, quoteChar || &#x27;&#x22;&#x27;);
+  return surround(str, quoteChar || '"');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1598,7 +1591,7 @@ module.exports = function join() {
 
   // this one is about 300x slower in Google Chrome
 <span class="apidocCodeCommentSpan">  /*eslint no-empty: 0*/
-</span>  for (var repeat = []; qty &#x3e; 0; repeat[--qty] = str) {}
+</span>  for (var repeat = []; qty &gt; 0; repeat[--qty] = str) {}
   return repeat.join(separator);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -1614,7 +1607,7 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function replaceAll(str, find, replace, ignorecase) {
-  var flags = (ignorecase === true)?&#x27;gi&#x27;:&#x27;g&#x27;;
+  var flags = (ignorecase === true)?'gi':'g';
   var reg = new RegExp(find, flags);
 
   return makeString(str).replace(reg, replace);
@@ -1632,17 +1625,17 @@ module.exports = function join() {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function reverse(str) {
-  return chars(str).reverse().join(&#x27;&#x27;);
+  return chars(str).reverse().join('');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
 
 
 
-var chars = require(&#x27;./chars&#x27;);
+var chars = require('./chars');
 
 module.exports = function reverse(str) {
-  return chars(str).<span class="apidocCodeKeywordSpan">reverse</span>().join(&#x27;&#x27;);
+  return chars(str).<span class="apidocCodeKeywordSpan">reverse</span>().join('');
 };
 ...</pre></li>
     </ul>
@@ -1672,7 +1665,7 @@ module.exports = function reverse(str) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function rpad(str, length, padStr) {
-  return pad(str, length, padStr, &#x27;right&#x27;);
+  return pad(str, length, padStr, 'right');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1688,9 +1681,9 @@ module.exports = function reverse(str) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function rtrim(str, characters) {
   str = makeString(str);
-  if (!characters &#x26;&#x26; nativeTrimRight) return nativeTrimRight.call(str);
+  if (!characters &amp;&amp; nativeTrimRight) return nativeTrimRight.call(str);
   characters = defaultToWhiteSpace(characters);
-  return str.replace(new RegExp(characters + &#x27;+$&#x27;), &#x27;&#x27;);
+  return str.replace(new RegExp(characters + '+$'), '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1706,9 +1699,9 @@ module.exports = function reverse(str) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function rtrim(str, characters) {
   str = makeString(str);
-  if (!characters &#x26;&#x26; nativeTrimRight) return nativeTrimRight.call(str);
+  if (!characters &amp;&amp; nativeTrimRight) return nativeTrimRight.call(str);
   characters = defaultToWhiteSpace(characters);
-  return str.replace(new RegExp(characters + &#x27;+$&#x27;), &#x27;&#x27;);
+  return str.replace(new RegExp(characters + '+$'), '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1723,21 +1716,21 @@ module.exports = function reverse(str) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function slugify(str) {
-  return trim(dasherize(cleanDiacritics(str).replace(/[^\w\s-]/g, &#x27;-&#x27;).toLowerCase()), &#x27;-&#x27;);
+  return trim(dasherize(cleanDiacritics(str).replace(/[^\w\s-]/g, '-').toLowerCase()), '-');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```shell
     meteor add underscorestring:underscore.string
 ```
 
-and you&#x27;ll be able to access the library with the ***s*** global from both the server and the client.
+and you'll be able to access the library with the ***s*** global from both the server and the client.
 
 ```javascript
-s.<span class="apidocCodeKeywordSpan">slugify</span>(&#x22;Hello world!&#x22;);
-// =&#x3e; hello-world
+s.<span class="apidocCodeKeywordSpan">slugify</span>("Hello world!");
+// =&gt; hello-world
 
-s(&#x22;   epeli  &#x22;).trim().capitalize().value();
-// =&#x3e; &#x22;Epeli&#x22;
+s("   epeli  ").trim().capitalize().value();
+// =&gt; "Epeli"
 ```
 
 [Meteor]: http://www.meteor.com/
@@ -1756,18 +1749,18 @@ s(&#x22;   epeli  &#x22;).trim().capitalize().value();
     <li>description and source-code<pre class="apidocCodePre">function splice(str, i, howmany, substr) {
   var arr = chars(str);
   arr.splice(~~i, ~~howmany, substr);
-  return arr.join(&#x27;&#x27;);
+  return arr.join('');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
 
 
-var chars = require(&#x27;./chars&#x27;);
+var chars = require('./chars');
 
 module.exports = function splice(str, i, howmany, substr) {
   var arr = chars(str);
   arr.<span class="apidocCodeKeywordSpan">splice</span>(~~i, ~~howmany, substr);
-  return arr.join(&#x27;&#x27;);
+  return arr.join('');
 };
 ...</pre></li>
     </ul>
@@ -1802,7 +1795,7 @@ module.exports = function splice(str, i, howmany, substr) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function startsWith(str, starts, position) {
   str = makeString(str);
-  starts = &#x27;&#x27; + starts;
+  starts = '' + starts;
   position = position == null ? 0 : Math.min(toPositive(position), str.length);
   return str.lastIndexOf(starts, position) === position;
 }</pre></li>
@@ -1810,16 +1803,16 @@ module.exports = function splice(str, i, howmany, substr) {
     npm install underscore.string.fp
 
 ```javascript
-var S = require(&#x27;underscore.string.fp&#x27;);
-var filter = require(&#x27;lodash-fp&#x27;).filter;
-var filter = require(&#x27;ramda&#x27;).filter;
+var S = require('underscore.string.fp');
+var filter = require('lodash-fp').filter;
+var filter = require('ramda').filter;
 
-filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
-  &#x27;.vimrc&#x27;,
-  &#x27;foo.md&#x27;,
-  &#x27;.zshrc&#x27;
+filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>('.'), [
+  '.vimrc',
+  'foo.md',
+  '.zshrc'
 ]);
-// =&#x3e; [&#x27;.vimrc&#x27;, &#x27;.zshrc&#x27;]
+// =&gt; ['.vimrc', '.zshrc']
 ```
 ...</pre></li>
     </ul>
@@ -1907,9 +1900,9 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function trim(str, characters) {
   str = makeString(str);
-  if (!characters &#x26;&#x26; nativeTrim) return nativeTrim.call(str);
+  if (!characters &amp;&amp; nativeTrim) return nativeTrim.call(str);
   characters = defaultToWhiteSpace(characters);
-  return str.replace(new RegExp(&#x27;^&#x27; + characters + &#x27;+|&#x27; + characters + &#x27;+$&#x27;, &#x27;g&#x27;), &#x27;&#x27;);
+  return str.replace(new RegExp('^' + characters + '+|' + characters + '+$', 'g'), '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1924,7 +1917,7 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function stripTags(str) {
-  return makeString(str).replace(/&#x3c;\/?[^&#x3e;]+&#x3e;/g, &#x27;&#x27;);
+  return makeString(str).replace(/&lt;\/?[^&gt;]+&gt;/g, '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1954,7 +1947,7 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function surround(str, wrapper) {
-  return [wrapper, str, wrapper].join(&#x27;&#x27;);
+  return [wrapper, str, wrapper].join('');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2003,11 +1996,11 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toBoolean(str, trueValues, falseValues) {
-  if (typeof str === &#x27;number&#x27;) str = &#x27;&#x27; + str;
-  if (typeof str !== &#x27;string&#x27;) return !!str;
+  if (typeof str === 'number') str = '' + str;
+  if (typeof str !== 'string') return !!str;
   str = trim(str);
-  if (boolMatch(str, trueValues || [&#x27;true&#x27;, &#x27;1&#x27;])) return true;
-  if (boolMatch(str, falseValues || [&#x27;false&#x27;, &#x27;0&#x27;])) return false;
+  if (boolMatch(str, trueValues || ['true', '1'])) return true;
+  if (boolMatch(str, falseValues || ['false', '0'])) return false;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2022,11 +2015,11 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toBoolean(str, trueValues, falseValues) {
-  if (typeof str === &#x27;number&#x27;) str = &#x27;&#x27; + str;
-  if (typeof str !== &#x27;string&#x27;) return !!str;
+  if (typeof str === 'number') str = '' + str;
+  if (typeof str !== 'string') return !!str;
   str = trim(str);
-  if (boolMatch(str, trueValues || [&#x27;true&#x27;, &#x27;1&#x27;])) return true;
-  if (boolMatch(str, falseValues || [&#x27;false&#x27;, &#x27;0&#x27;])) return false;
+  if (boolMatch(str, trueValues || ['true', '1'])) return true;
+  if (boolMatch(str, falseValues || ['false', '0'])) return false;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2058,12 +2051,12 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function toSentence(array, separator, lastSeparator, serial) {
-  separator = separator || &#x27;, &#x27;;
-  lastSeparator = lastSeparator || &#x27; and &#x27;;
+  separator = separator || ', ';
+  lastSeparator = lastSeparator || ' and ';
   var a = array.slice(),
     lastMember = a.pop();
 
-  if (array.length &#x3e; 2 &#x26;&#x26; serial) lastSeparator = rtrim(separator) + lastSeparator;
+  if (array.length &gt; 2 &amp;&amp; serial) lastSeparator = rtrim(separator) + lastSeparator;
 
   return a.length ? a.join(separator) + lastSeparator + lastMember : lastMember;
 }</pre></li>
@@ -2096,9 +2089,9 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function trim(str, characters) {
   str = makeString(str);
-  if (!characters &#x26;&#x26; nativeTrim) return nativeTrim.call(str);
+  if (!characters &amp;&amp; nativeTrim) return nativeTrim.call(str);
   characters = defaultToWhiteSpace(characters);
-  return str.replace(new RegExp(&#x27;^&#x27; + characters + &#x27;+|&#x27; + characters + &#x27;+$&#x27;, &#x27;g&#x27;), &#x27;&#x27;);
+  return str.replace(new RegExp('^' + characters + '+|' + characters + '+$', 'g'), '');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```
@@ -2106,10 +2099,10 @@ filter(S.<span class="apidocCodeKeywordSpan">startsWith</span>(&#x27;.&#x27;), [
 or load the full library to enable chaining
 
 ```javascript
-var s = require(&#x22;underscore.string&#x22;);
+var s = require("underscore.string");
 
-s(&#x22;   epeli  &#x22;).<span class="apidocCodeKeywordSpan">trim</span>().capitalize().value();
-// =&#x3e; &#x22;Epeli&#x22;
+s("   epeli  ").<span class="apidocCodeKeywordSpan">trim</span>().capitalize().value();
+// =&gt; "Epeli"
 ```
 
 but especially when using with [Browserify][] the individual function approach
@@ -2129,9 +2122,9 @@ use.
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function truncate(str, length, truncateStr) {
   str = makeString(str);
-  truncateStr = truncateStr || &#x27;...&#x27;;
+  truncateStr = truncateStr || '...';
   length = ~~length;
-  return str.length &#x3e; length ? str.slice(0, length) + truncateStr : str;
+  return str.length &gt; length ? str.slice(0, length) + truncateStr : str;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2146,7 +2139,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function underscored(str) {
-  return trim(str).replace(/([a-z\d])([A-Z]+)/g, &#x27;$1_$2&#x27;).replace(/[-\s]+/g, &#x27;_&#x27;).toLowerCase();
+  return trim(str).replace(/([a-z\d])([A-Z]+)/g, '$1_$2').replace(/[-\s]+/g, '_').toLowerCase();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2161,7 +2154,7 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function unescapeHTML(str) {
-  return makeString(str).replace(/\&#x26;([^;]+);/g, function(entity, entityCode) {
+  return makeString(str).replace(/\&amp;([^;]+);/g, function(entity, entityCode) {
     var match;
 
     if (entityCode in htmlEntities) {
@@ -2190,8 +2183,8 @@ use.
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function unquote(str, quoteChar) {
-  quoteChar = quoteChar || &#x27;&#x22;&#x27;;
-  if (str[0] === quoteChar &#x26;&#x26; str[str.length - 1] === quoteChar)
+  quoteChar = quoteChar || '"';
+  if (str[0] === quoteChar &amp;&amp; str[str.length - 1] === quoteChar)
     return str.slice(1, str.length - 1);
   else return str;
 }</pre></li>
@@ -2248,38 +2241,38 @@ use.
   options = options || {};
 
   var width = options.width || 75;
-  var seperator = options.seperator || &#x27;\n&#x27;;
+  var seperator = options.seperator || '\n';
   var cut = options.cut || false;
   var preserveSpaces = options.preserveSpaces || false;
   var trailingSpaces = options.trailingSpaces || false;
 
   var result;
 
-  if(width &#x3c;= 0){
+  if(width &lt;= 0){
     return str;
   }
 
   else if(!cut){
 
-    var words = str.split(&#x27; &#x27;);
+    var words = str.split(' ');
     var current_column = 0;
-    result = &#x27;&#x27;;
+    result = '';
 
-    while(words.length &#x3e; 0){
+    while(words.length &gt; 0){
 
       // if adding a space and the next word would cause this line to be longer than width...
-      if(1 + words[0].length + current_column &#x3e; width){
+      if(1 + words[0].length + current_column &gt; width){
         //start a new line if this line is not already empty
-        if(current_column &#x3e; 0){
+        if(current_column &gt; 0){
           // add a space at the end of the line is preserveSpaces is true
           if (preserveSpaces){
-            result += &#x27; &#x27;;
+            result += ' ';
             current_column++;
           }
           // fill the rest of the line with spaces if trailingSpaces option is true
           else if(trailingSpaces){
-            while(current_column &#x3c; width){
-              result += &#x27; &#x27;;
+            while(current_column &lt; width){
+              result += ' ';
               current_column++;
             }
           }
@@ -2290,8 +2283,8 @@ use.
       }
 
       // if not at the begining of the line, add a space in front of the word
-      if(current_column &#x3e; 0){
-        result += &#x27; &#x27;;
+      if(current_column &gt; 0){
+        result += ' ';
         current_column++;
       }
 
@@ -2304,8 +2297,8 @@ use.
 
     // fill the rest of the line with spaces if trailingSpaces option is true
     if(trailingSpaces){
-      while(current_column &#x3c; width){
-        result += &#x27; &#x27;;
+      while(current_column &lt; width){
+        result += ' ';
         current_column++;
       }
     }
@@ -2317,11 +2310,11 @@ use.
   else {
 
     var index = 0;
-    result = &#x27;&#x27;;
+    result = '';
 
     // walk through each character and add seperators where appropriate
-    while(index &#x3c; str.length){
-      if(index % width == 0 &#x26;&#x26; index &#x3e; 0){
+    while(index &lt; str.length){
+      if(index % width == 0 &amp;&amp; index &gt; 0){
         result += seperator;
       }
       result += str.charAt(index);
@@ -2330,8 +2323,8 @@ use.
 
     // fill the rest of the line with spaces if trailingSpaces option is true
     if(trailingSpaces){
-      while(index % width &#x3e; 0){
-        result += &#x27; &#x27;;
+      while(index % width &gt; 0){
+        result += ' ';
         index++;
       }
     }
@@ -2353,3 +2346,4 @@ use.
     ]
 </div>
 </div>
+</body></html>
